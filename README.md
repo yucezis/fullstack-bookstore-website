@@ -6,13 +6,6 @@ Originally developed as an "Engineering Design" (Mühendislik Tasarımı) capsto
 
 ---
 
-##  Project Background
-This application was developed through a fully documented engineering process. The accompanying 50-page thesis covers the entire development lifecycle, from requirement analysis to system architecture and database design.
-
-** Thesis File:** [Tez-MühendislikTasarimi.pdf](./Tez-MühendislikTasarimi.pdf)
-
----
-
 ## Features Breakdown
 
 ###  1. Customer Storefront
