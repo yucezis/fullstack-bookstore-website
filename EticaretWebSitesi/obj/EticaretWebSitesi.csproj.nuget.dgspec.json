@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Zişan Yüce\\source\\repos\\EticaretWebSitesi\\EticaretWebSitesi\\EticaretWebSitesi.csproj": {}
+    "C:\\C#_Projects\\EticaretWebSitesi\\EticaretWebSitesi\\EticaretWebSitesi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Zişan Yüce\\source\\repos\\EticaretWebSitesi\\EticaretWebSitesi\\EticaretWebSitesi.csproj": {
+    "C:\\C#_Projects\\EticaretWebSitesi\\EticaretWebSitesi\\EticaretWebSitesi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zişan Yüce\\source\\repos\\EticaretWebSitesi\\EticaretWebSitesi\\EticaretWebSitesi.csproj",
+        "projectUniqueName": "C:\\C#_Projects\\EticaretWebSitesi\\EticaretWebSitesi\\EticaretWebSitesi.csproj",
         "projectName": "EticaretWebSitesi",
-        "projectPath": "C:\\Users\\Zişan Yüce\\source\\repos\\EticaretWebSitesi\\EticaretWebSitesi\\EticaretWebSitesi.csproj",
+        "projectPath": "C:\\C#_Projects\\EticaretWebSitesi\\EticaretWebSitesi\\EticaretWebSitesi.csproj",
         "packagesPath": "C:\\Users\\Zişan Yüce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Zişan Yüce\\source\\repos\\EticaretWebSitesi\\EticaretWebSitesi\\obj\\",
+        "outputPath": "C:\\C#_Projects\\EticaretWebSitesi\\EticaretWebSitesi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

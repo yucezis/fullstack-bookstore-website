@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5M33quUoDVw=",
+  "dgSpecHash": "J4lheaZ+VfU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Zişan Yüce\\source\\repos\\EticaretWebSitesi\\EticaretWebSitesi\\EticaretWebSitesi.csproj",
+  "projectFilePath": "C:\\C#_Projects\\EticaretWebSitesi\\EticaretWebSitesi\\EticaretWebSitesi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Zişan Yüce\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Zişan Yüce\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

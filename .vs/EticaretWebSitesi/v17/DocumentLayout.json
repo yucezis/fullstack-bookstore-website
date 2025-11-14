@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Zi\u015Fan Y\u00FCce\\source\\repos\\EticaretWebSitesi\\",
+  "WorkspaceRootPath": "C:\\C#_Projects\\EticaretWebSitesi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E20559DC-3D5B-444E-AEB0-431EB0958343}|EticaretWebSitesi\\EticaretWebSitesi.csproj|c:\\users\\zi\u015Fan y\u00FCce\\source\\repos\\eticaretwebsitesi\\eticaretwebsitesi\\views\\urun\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{E20559DC-3D5B-444E-AEB0-431EB0958343}|EticaretWebSitesi\\EticaretWebSitesi.csproj|c:\\c#_projects\\eticaretwebsitesi\\eticaretwebsitesi\\views\\urun\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E20559DC-3D5B-444E-AEB0-431EB0958343}|EticaretWebSitesi\\EticaretWebSitesi.csproj|solutionrelative:eticaretwebsitesi\\views\\urun\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E20559DC-3D5B-444E-AEB0-431EB0958343}|EticaretWebSitesi\\EticaretWebSitesi.csproj|c:\\users\\zi\u015Fan y\u00FCce\\source\\repos\\eticaretwebsitesi\\eticaretwebsitesi\\controllers\\uruncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E20559DC-3D5B-444E-AEB0-431EB0958343}|EticaretWebSitesi\\EticaretWebSitesi.csproj|c:\\c#_projects\\eticaretwebsitesi\\eticaretwebsitesi\\controllers\\uruncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E20559DC-3D5B-444E-AEB0-431EB0958343}|EticaretWebSitesi\\EticaretWebSitesi.csproj|solutionrelative:eticaretwebsitesi\\controllers\\uruncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -24,11 +24,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Zi\u015Fan Y\u00FCce\\source\\repos\\EticaretWebSitesi\\EticaretWebSitesi\\Views\\Urun\\Index.cshtml",
+              "DocumentMoniker": "C:\\C#_Projects\\EticaretWebSitesi\\EticaretWebSitesi\\Views\\Urun\\Index.cshtml",
               "RelativeDocumentMoniker": "EticaretWebSitesi\\Views\\Urun\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Zi\u015Fan Y\u00FCce\\source\\repos\\EticaretWebSitesi\\EticaretWebSitesi\\Views\\Urun\\Index.cshtml",
+              "ToolTip": "C:\\C#_Projects\\EticaretWebSitesi\\EticaretWebSitesi\\Views\\Urun\\Index.cshtml",
               "RelativeToolTip": "EticaretWebSitesi\\Views\\Urun\\Index.cshtml",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAkwIEAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAQwHsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-05T18:57:17.922Z",
               "EditorCaption": ""
@@ -37,9 +37,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "UrunController.cs",
-              "DocumentMoniker": "C:\\Users\\Zi\u015Fan Y\u00FCce\\source\\repos\\EticaretWebSitesi\\EticaretWebSitesi\\Controllers\\UrunController.cs",
+              "DocumentMoniker": "C:\\C#_Projects\\EticaretWebSitesi\\EticaretWebSitesi\\Controllers\\UrunController.cs",
               "RelativeDocumentMoniker": "EticaretWebSitesi\\Controllers\\UrunController.cs",
-              "ToolTip": "C:\\Users\\Zi\u015Fan Y\u00FCce\\source\\repos\\EticaretWebSitesi\\EticaretWebSitesi\\Controllers\\UrunController.cs",
+              "ToolTip": "C:\\C#_Projects\\EticaretWebSitesi\\EticaretWebSitesi\\Controllers\\UrunController.cs",
               "RelativeToolTip": "EticaretWebSitesi\\Controllers\\UrunController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

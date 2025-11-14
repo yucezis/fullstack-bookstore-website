@@ -17,193 +17,193 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = EticaretWebSitesi
 build_property.RootNamespace = EticaretWebSitesi
-build_property.ProjectDir = C:\Users\Zişan Yüce\source\repos\EticaretWebSitesi\EticaretWebSitesi\
+build_property.ProjectDir = C:\C#_Projects\EticaretWebSitesi\EticaretWebSitesi\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Zişan Yüce\source\repos\EticaretWebSitesi\EticaretWebSitesi
+build_property.MSBuildProjectDirectory = C:\C#_Projects\EticaretWebSitesi\EticaretWebSitesi
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Admin/AdminEkleme.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Admin/AdminEkleme.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5Fa2xlbWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Admin/Index.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Admin/Login.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Admin/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Admin/Panel.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Admin/Panel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFuZWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Giris/Index.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Giris/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lyaXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Home/Index.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Home/Privacy.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Istatistik/Index.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Istatistik/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXN0YXRpc3Rpa1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Kategori/Index.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Kategori/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F0ZWdvcmlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Kategori/KategoriEkle.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Kategori/KategoriEkle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F0ZWdvcmlcS2F0ZWdvcmlFa2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Kategori/KategoriGetir.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Kategori/KategoriGetir.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F0ZWdvcmlcS2F0ZWdvcmlHZXRpci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Musteri/Hesabim.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Musteri/Hesabim.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzdGVyaVxIZXNhYmltLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Musteri/Index.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Musteri/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzdGVyaVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Musteri/KayitOl.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Musteri/KayitOl.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzdGVyaVxLYXlpdE9sLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Musteri/Login.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Musteri/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzdGVyaVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Musteri/MusteriAlisveris.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Musteri/MusteriAlisveris.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzdGVyaVxNdXN0ZXJpQWxpc3ZlcmlzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Musteri/MusteriEkleme.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Musteri/MusteriEkleme.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzdGVyaVxNdXN0ZXJpRWtsZW1lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Musteri/MusteriGetir.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Musteri/MusteriGetir.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzdGVyaVxNdXN0ZXJpR2V0aXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/SatisHareket/Index.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/SatisHareket/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2F0aXNIYXJla2V0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/SatisHareket/SatisDetay.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/SatisHareket/SatisDetay.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2F0aXNIYXJla2V0XFNhdGlzRGV0YXkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/SatisHareket/SatisEkle.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/SatisHareket/SatisEkle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2F0aXNIYXJla2V0XFNhdGlzRWtsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/SatisHareket/SatisGetir.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/SatisHareket/SatisGetir.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2F0aXNIYXJla2V0XFNhdGlzR2V0aXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Sepet/Odeme.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Sepet/Odeme.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VwZXRcT2RlbWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Sepet/OdemeBasarili.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Sepet/OdemeBasarili.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VwZXRcT2RlbWVCYXNhcmlsaS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Shared/AdminLayout.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Shared/AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFkbWluTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Shared/Error.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Shared/_shopLayout.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Shared/_shopLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9zaG9wTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Shop/CokSatanKitaplar.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Shop/CokSatanKitaplar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxDb2tTYXRhbktpdGFwbGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Shop/Favorilerim.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Shop/Favorilerim.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxGYXZvcmlsZXJpbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Shop/hakkimizda.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Shop/hakkimizda.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxoYWtraW1pemRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Shop/Index.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Shop/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Shop/KitaplarıListeleme.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Shop/KitaplarıListeleme.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxLaXRhcGxhcsSxTGlzdGVsZW1lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Shop/MainMenu.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Shop/MainMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxNYWluTWVudS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Shop/SepeteEkle.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Shop/SepeteEkle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxTZXBldGVFa2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Shop/TumKitaplariGetir.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Shop/TumKitaplariGetir.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxUdW1LaXRhcGxhcmlHZXRpci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/UrunDetay/Index.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/UrunDetay/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXJ1bkRldGF5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Urun/Index.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Urun/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXJ1blxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Urun/IndirimliUrunler.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Urun/IndirimliUrunler.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXJ1blxJbmRpcmltbGlVcnVubGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Urun/Kategori.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Urun/Kategori.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXJ1blxLYXRlZ29yaS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Urun/Sepetim.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Urun/Sepetim.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXJ1blxTZXBldGltLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Urun/UrunListe.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Urun/UrunListe.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXJ1blxVcnVuTGlzdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/_ViewImports.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/_ViewStart.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Zişan Yüce/source/repos/EticaretWebSitesi/EticaretWebSitesi/Views/Shared/_Layout.cshtml]
+[C:/C\#_Projects/EticaretWebSitesi/EticaretWebSitesi/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ecjruhok89
