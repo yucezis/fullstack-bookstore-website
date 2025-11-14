@@ -1,0 +1,14 @@
+
+wwwroot/lib/* linguist-vendored
+wwwroot/js/* linguist-vendored
+wwwroot/css/* linguist-vendored
+wwwroot/fonts/* linguist-vendored
+
+*.min.js linguist-generated
+*.min.css linguist-generated
+
+wwwroot/AdminLTE-3.0.4/* linguist-vendored
+wwwroot/thumber/* linguist-vendored
+wwwroot/Web/* linguist-vendored
+wwwroot/web2/* linguist-vendored
+wwwroot/Strategy/* linguist-vendored
