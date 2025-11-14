@@ -1,0 +1,171 @@
+﻿@{
+    ViewData["Title"] = "Ödeme";
+    Layout = "~/Views/Shared/_shopLayout.cshtml";
+}
+
+<!-- Tüm sayfayı kaplayan siyah şeffaf katman -->
+<div class="black-overlay"></div>
+
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: url('/img/libraryfoto.jpg') no-repeat center center fixed;
+        background-size: cover;
+        position: relative;
+        z-index: 0;
+    }
+
+    /* Tam sayfa siyah şeffaf katman */
+    .black-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6); /* Şeffaf siyah */
+        z-index: 0;
+    }
+
+    .odeme-container {
+        position: relative;
+        max-width: 900px;
+        margin: 100px auto;
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        background-color: #ffffff;
+        color: #000000;
+        z-index: 1;
+    }
+
+    h2 {
+        text-align: center;
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
+
+    #timer {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: #ff6b6b;
+        margin-bottom: 20px;
+    }
+
+    #form-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    #card-wrapper {
+        flex: 1 1 45%;
+        min-width: 300px;
+    }
+
+    #payment-form {
+        flex: 1 1 45%;
+        min-width: 300px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #000;
+    }
+
+    #odemeButon {
+        width: 100%;
+        padding: 12px;
+        background-color: #3b4cca;
+        color: white;
+        border: none;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+        #odemeButon:hover {
+            background-color: #2a34a8;
+        }
+
+    /* 🔧 Card.js özel tema */
+    .jp-card {
+        background: linear-gradient(135deg, #3b4cca, #1e40af) !important;
+        color: white !important;
+    }
+
+    .jp-card-front, .jp-card-back {
+        background: transparent !important;
+        color: white !important;
+    }
+
+    .jp-card-number, .jp-card-name, .jp-card-expiry {
+        color: white !important;
+    }
+
+    .jp-card-logo.jp-card-amex {
+        filter: brightness(0) invert(1);
+    }
+</style>
+
+<div class="odeme-container">
+    <h2 style="color:black">💳 Ödeme Bilgileri</h2>
+    <p id="timer">03:00</p>
+
+    <div id="form-wrapper">
+        <div id="card-wrapper"></div>
+
+        <form id="payment-form" method="post" action="/Sepet/OdemeTamamla">
+            <input type="text" name="number" placeholder="Kart Numarası" required>
+            <input type="text" name="name" placeholder="Kart Sahibi Adı" required>
+            <input type="text" name="expiry" placeholder="AA/YY" required>
+            <input type="text" name="cvc" placeholder="CVV" required>
+            <button type="submit" id="odemeButon">✔️ Ödemeyi Tamamla</button>
+        </form>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/card/2.5.4/card.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/card/2.5.4/card.min.js"></script>
+
+<script>
+    new Card({
+        form: '#payment-form',
+        container: '#card-wrapper'
+    });
+
+    let time = 180;
+    const timerElement = document.getElementById('timer');
+    const odemeButon = document.getElementById('odemeButon');
+
+    const countdown = setInterval(() => {
+        let minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+        timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        time--;
+        if (time < 0) {
+            clearInterval(countdown);
+            timerElement.textContent = "Süre doldu!";
+            odemeButon.disabled = true;
+            odemeButon.innerText = "Süre Doldu";
+        }
+    }, 1000);
+</script>
+
+
+
+
+
+

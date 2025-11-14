@@ -1,0 +1,151 @@
+﻿@model EticaretWebSitesi.Models.Siniflar.Musteri
+
+@{
+    ViewData["Title"] = "Kayıt Ol";
+    Layout = "~/Views/Shared/_shopLayout.cshtml";
+}
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-image: url('/img/libraryfoto.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+        position: relative;
+    }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+    .register-container {
+        max-width: 800px;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 16px;
+        margin: 100px auto;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+        color: #333;
+    }
+
+        .register-container h3 {
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #c0392b;
+        }
+
+    label {
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        background-color: #f7f7f7;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        color: #333;
+        padding: 10px 14px;
+        transition: border-color 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: #f44336;
+            outline: none;
+            box-shadow: 0 0 6px rgba(244, 67, 54, 0.5);
+        }
+
+    .btn-danger {
+        background-color: #f44336;
+        border: none;
+        font-weight: 700;
+        padding: 12px 0;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+        color: white;
+    }
+
+        .btn-danger:hover {
+            background-color: #d32f2f;
+        }
+
+    .alert-danger {
+        background-color: #d9534f;
+        border-color: #d43f3a;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .form-col {
+        flex: 1 1 calc(50% - 10px);
+    }
+
+</style>
+
+<div class="register-container">
+    <h3>Kayıt Ol</h3>
+
+    @if (ViewBag.Hata != null)
+    {
+        <div class="alert alert-danger">@ViewBag.Hata</div>
+    }
+
+    <form asp-action="KayitOl" asp-controller="Musteri" method="post" novalidate>
+        <div class="form-row">
+            <div class="form-col mb-3">
+                <label asp-for="MusteriAdi" class="form-label">İsim</label>
+                <input asp-for="MusteriAdi" class="form-control" required />
+                <span asp-validation-for="MusteriAdi" class="text-danger"></span>
+            </div>
+            <div class="form-col mb-3">
+                <label asp-for="MusteriSoyadi" class="form-label">Soyisim</label>
+                <input asp-for="MusteriSoyadi" class="form-control" required />
+                <span asp-validation-for="MusteriSoyadi" class="text-danger"></span>
+            </div>
+            <div class="form-col mb-3">
+                <label asp-for="MusteriSehir" class="form-label">Adres</label>
+                <input asp-for="MusteriSehir" class="form-control" required />
+                <span asp-validation-for="MusteriSehir" class="text-danger"></span>
+            </div>
+            <div class="form-col mb-3">
+                <label asp-for="MusteriTelNo" class="form-label">Telefon Numarası</label>
+                <input asp-for="MusteriTelNo" class="form-control" required />
+                <span asp-validation-for="MusteriTelNo" class="text-danger"></span>
+            </div>
+            <div class="form-col mb-3">
+                <label asp-for="MusteriSifre" class="form-label">Şifre</label>
+                <input asp-for="MusteriSifre" type="password" class="form-control" required />
+                <span asp-validation-for="MusteriSifre" class="text-danger"></span>
+            </div>
+            <div class="form-col mb-3">
+                <label for="MusteriSifreTekrar" class="form-label">Şifre (Tekrar)</label>
+                <input type="password" name="MusteriSifreTekrar" class="form-control" required />
+                <span class="text-danger">@ViewBag.SifreHata</span>
+            </div>
+            <div class="form-col mb-3">
+                <label asp-for="MusteriMail" class="form-label">Mail</label>
+                <input asp-for="MusteriMail" type="email" class="form-control" required />
+                <span asp-validation-for="MusteriMail" class="text-danger"></span>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-danger w-100 mt-3">Kayıt Ol</button>
+    </form>
+</div>

@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "Admin Giriş";
+    Layout = "~/Views/Shared/_shopLayout.cshtml";
+}
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-image: url('/img/libraryfoto.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+        position: relative;
+    }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* sadece karartma */
+            z-index: -1;
+        }
+
+    .admin-login-container {
+        max-width: 420px;
+        background-color: #ffffff;
+        padding: 35px 30px;
+        border-radius: 15px;
+        margin: 100px auto;
+        color: #333;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+    }
+
+        .admin-login-container h2 {
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #c0392b;
+        }
+
+        .admin-login-container label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .admin-login-container input {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+        .admin-login-container button {
+            font-weight: 700;
+            padding: 12px;
+            width: 100%;
+        }
+
+        .admin-login-container .error-message {
+            color: #f44336;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+</style>
+
+<div class="admin-login-container">
+    <h2> Admin Giriş</h2>
+
+    <form method="post">
+        <label for="email">Kullanıcı Adı:</label>
+        <input id="email" type="text" name="email" required />
+
+        <label for="sifre">Şifre:</label>
+        <input id="sifre" type="password" name="sifre" required />
+
+        <button type="submit" class="btn btn-success">Giriş</button>
+
+        @if (ViewBag.Hata != null)
+        {
+            <p class="error-message"><strong>@ViewBag.Hata</strong></p>
+        }
+    </form>
+</div>

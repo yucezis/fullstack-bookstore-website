@@ -1,0 +1,21 @@
+﻿@model EticaretWebSitesi.Models.Siniflar.Kategori
+@{
+    ViewData["Title"] = "KategoriGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h1 style="color: darkblue;">Kategori Güncelleme</h1>
+<br />
+@using(Html.BeginForm("KategoriGuncelle","kategori", FormMethod.Post))
+{
+    <div class="from-group">
+        @Html.LabelFor(x => x.KategoriAdi)
+        @Html.TextBoxFor(x => x.KategoriAdi, new { @class = "form-control" })
+        @Html.HiddenFor(x=>x.KategoriID)
+        <br />
+        <button class="btn btn-warning"> Güncellemeleri Kaydet</button>
+    </div>
+}
+
+

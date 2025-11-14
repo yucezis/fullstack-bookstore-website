@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "Giriş";
+    Layout = "~/Views/Shared/_shopLayout.cshtml";
+}
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-image: url('/img/libraryfoto.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+        position: relative;
+    }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); 
+            z-index: -1;
+        }
+
+    .login-type-container {
+        max-width: 420px;
+        background-color: #ffffff;
+        padding: 40px 35px;
+        border-radius: 15px;
+        margin: 120px auto;
+        color: #333;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    }
+
+        .login-type-container h2 {
+            margin-bottom: 35px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #c0392b;
+        }
+
+        .login-type-container a {
+            display: block;
+            background-color: #1e90ff;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 18px;
+            transition: background-color 0.3s ease;
+            font-size: 17px;
+        }
+
+            .login-type-container a:hover {
+                background-color: #0077cc;
+            }
+</style>
+
+<div class="login-type-container">
+    <h2>Giriş Türünü Seçiniz</h2>
+
+    <a href="/Musteri/Login">👤 Müşteri Girişi</a>
+    <a href="/Admin/Login">🛠️ Admin Girişi</a>
+    <a href="/Musteri/KayitOl">📝 Kayıt Ol</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,189 @@
+﻿@{
+    ViewData["Title"] = "Hakkımızda";
+    Layout = "~/Views/Shared/_shopLayout.cshtml";
+}
+
+<style>
+    body {
+        background-image: url('/img/libraryfoto.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-color: #121212;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        color: #eee;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 100px auto 80px auto;
+        background: rgba(20, 20, 20, 0.85);
+        padding: 50px 40px;
+        border-radius: 15px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+        backdrop-filter: saturate(180%) blur(12px);
+        color: #f5f5f5;
+        transition: transform 0.3s ease;
+    }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(255, 69, 0, 0.8);
+        }
+
+    h1 {
+        text-align: center;
+        font-weight: 700;
+        font-size: 2.8rem;
+        margin-bottom: 40px;
+        color: #ff4500;
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+
+    p {
+        font-size: 1.15rem;
+        margin-bottom: 22px;
+        line-height: 1.65;
+        letter-spacing: 0.03em;
+    }
+
+    strong {
+        color: #ff784e;
+    }
+
+    /* List yerine tikli avantajlar için flex icon */
+    .advantages {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin: 30px 0 40px 0;
+    }
+
+        .advantages p {
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0;
+            color: #ffd1b8;
+        }
+
+            .advantages p::before {
+                content: "✔";
+                color: #ff4500;
+                font-weight: bold;
+                margin-right: 12px;
+                font-size: 1.3rem;
+                line-height: 1;
+            }
+
+    hr {
+        border: none;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 50px 0;
+    }
+
+    .social-links {
+        text-align: center;
+    }
+
+        .social-links p {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+            color: #ff6b3b;
+        }
+
+        .social-links a {
+            margin: 0 15px;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.25s ease;
+        }
+
+            .social-links a:hover {
+                color: #ff4500;
+            }
+
+        .social-links img {
+            margin-right: 8px;
+            filter: drop-shadow(0 0 1px rgba(0,0,0,0.5));
+            border-radius: 6px;
+        }
+
+    .media (max-width: 600px) {
+        .container
+
+    {
+        padding: 30px 20px;
+        margin: 80px 20px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    p, .advantages p {
+        font-size: 1rem;
+    }
+
+    .social-links a {
+        font-size: 1rem;
+        margin: 0 10px;
+    }
+
+    }
+</style>
+
+<div class="container">
+    <h1>Hakkımızda</h1>
+    <p><strong>Books ile Kitaplara Açılan Kapınız</strong></p>
+    <p>
+        Kitap okumayı seven, bilgiye değer veren ve öğrenmeyi yaşam tarzı haline getirmiş herkes için kurulan <strong>Books</strong>,
+        farklı alanlardaki kitapları tek bir çatı altında sunan modern bir e-ticaret platformudur.
+    </p>
+    <p>
+        Sitemizde, her seviyeye uygun <strong>sınavlara hazırlık kitapları</strong>, edebiyat tutkunları için <strong>romanlar</strong>,
+        dil becerilerini geliştirmek isteyenler için <strong>yabancı dil kitapları</strong> ve daha birçok kategori yer almaktadır.
+    </p>
+    <p>
+        Amacımız; kaliteli, güncel ve güvenilir kaynakları sizlerle buluşturmak, kitaplara ulaşmayı kolaylaştırmak ve her okuyucunun ihtiyacına yönelik çözümler sunmaktır.
+    </p>
+    <p>
+        <strong>Books</strong>, sadece bir kitap satış sitesi değil, aynı zamanda öğrenmenin ve gelişmenin herkes için erişilebilir olması gerektiğine inanan bir bilgi köprüsüdür.
+    </p>
+
+    <p><strong>Sunduğumuz Avantajlar:</strong></p>
+    <div class="advantages">
+        <p>Geniş ürün yelpazesi</p>
+        <p>Uygun fiyat seçenekleri</p>
+        <p>Güvenli ödeme sistemi</p>
+        <p>Hızlı kargo ve müşteri desteği</p>
+    </div>
+
+    <p><strong>Books</strong></p>
+
+    <hr />
+
+    <div class="social-links">
+        <p>Sosyal Medya Hesaplarımız</p>
+
+        <a href="https://www.instagram.com/your_instagram" target="_blank" aria-label="Instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="32" height="32" />
+            <span>your_instagram</span>
+        </a>
+
+        <a href="https://twitter.com/your_twitter" target="_blank" aria-label="Twitter">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/X_Logo_White_On_Black.svg" alt="X (Twitter)" width="32" height="32" />
+            <span>your_twitter</span>
+        </a>
+    </div>
+</div>

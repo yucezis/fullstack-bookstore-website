@@ -1,0 +1,56 @@
+﻿@using EticaretWebSitesi.Models.Siniflar
+@model List<Musteri>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<div class="text-center">
+<h1 style="color: darkgoldenrod" >Müşteri Bilgileri</h1>
+<div/>
+<br />
+
+
+<table class=" table table-striped">
+
+    <tr>
+        <th>İSİM </th>
+        <th>SOYİSİM</th>
+        <th>ADRES</th>
+        <th>MAİL ADRESİ</th>
+        <th>TELEFON NUMARASI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>Alışveriş Geçmişi</th>
+    </tr>
+
+    @foreach(var m in Model)
+    {
+        <tr>
+            <td> @m.MusteriAdi</td>
+            <td>@m.MusteriSoyadi</td>
+            <td>@m.MusteriSehir</td>
+            <td>@m.MusteriMail</td>
+            <td>@m.MusteriTelNo</td>
+            <td>
+                <a href="/Musteri/MusteriSil/@m.MusteriId" class="btn btn-danger"> Sil </a>
+            </td>
+            <td>
+                <a href="/Musteri/MusteriGetir/@m.MusteriId" class="btn btn-warning"> Güncelle </a>
+            </td>
+            <td>
+                <a href="/Musteri/MusteriAlisveris/@m.MusteriId" class="btn btn-danger" style="background-color:seagreen"> Alışveriş Geçmişi </a>
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+
+
+
+
+

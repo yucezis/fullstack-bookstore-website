@@ -1,0 +1,31 @@
+﻿@model EticaretWebSitesi.Models.Siniflar.SatisHareket
+@{
+    ViewData["Title"] = "SatisEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h1 style="color:darkgoldenrod">SATIŞ EKLE</h1>
+<br />
+
+<form class="from-group" method="post">
+    @Html.LabelFor(x => x.Urun, "Ürün")
+    @Html.DropDownListFor(x => x.UrunId, (List<SelectListItem>)ViewBag.deger1, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Musteri, "Müşteri Ad Soyad")
+    @Html.DropDownListFor(x => x.MusteriId, (List<SelectListItem>)ViewBag.deger2, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Adet, "Adet")
+    @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+   
+   
+    <br />
+    <button class="btn btn-success"> Satış Yap</button>
+</form>
+
+
+
+
+
+
+
+

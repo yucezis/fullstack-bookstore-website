@@ -1,0 +1,115 @@
+﻿@model List<EticaretWebSitesi.Models.Siniflar.OdemeSepeti>
+
+@{
+    ViewData["Title"] = "Sepetim";
+    Layout = "~/Views/Shared/_shopLayout.cshtml";
+}
+
+<style>
+    body {
+    background: url('/img/libraryfoto.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    }
+
+    body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+    }
+
+    .container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 120px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+    color: #b30000;
+    font-weight: bold;
+    }
+
+    table thead {
+    background-color: #343a40;
+    color: white;
+    }
+
+    .btn-success {
+    font-size: 1.1rem;
+    padding: 8px 20px;
+    }
+</style>
+
+<div class="container">
+    <h2 class="mb-4">🛒 Sepetim</h2>
+    @if (!Model.Any())
+    {
+        <div class="alert alert-warning">Sepete ürün eklemek için giriş yapınız.</div>
+    }
+    else
+    {
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Ürün Adı</th>
+                    <th>Yayınevi</th>
+                    <th>Adet</th>
+                    <th>Toplam Fiyat</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    var item = Model[i];
+                    <tr>
+                        <td>@(i + 1)</td>
+                        <td>@item.Urun.UrunAdi @item.Urun.UrunYazar</td>
+                        <td>@item.Urun.UrunMarka</td>
+                        <td>
+                            <form asp-action="AdetGuncelle" asp-controller="Urun" method="post" class="d-flex align-items-center">
+                                <input type="hidden" name="id" value="@item.Urun.UrunId" />
+                                <input type="number" name="adet" value="@item.Adet" min="1" class="form-control form-control-sm me-2" style="max-width: 60px;" />
+                                <button type="submit" class="btn btn-outline-secondary btn-sm" title="Güncelle">✔</button>
+                            </form>
+                        </td>
+                        <td>
+                            @if (item.Urun.IndirimliFiyat.HasValue)
+                            {
+                                <span class="text-muted" style="text-decoration:line-through;">@(item.Urun.UrunSatisFiyati * item.Adet) ₺</span>
+
+                                <br />
+                                <span class="text-danger fw-bold" style="color:black">@(item.Urun.IndirimliFiyat * item.Adet) ₺</span>
+                            }
+                            else
+                            {
+                                <span class="fw-bold">@((item.Urun.UrunSatisFiyati * item.Adet).ToString("N2")) ₺</span>
+                            }
+                        </td>
+                        <td>
+                            <form asp-action="SepettenCikar" asp-controller="Urun" method="post">
+                                <input type="hidden" name="id" value="@item.Urun.UrunId" />
+                                <button type="submit" class="btn btn-sm btn-danger" title="Sepetten Kaldır">🗑 Kaldır</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="d-flex justify-content-between align-items-center mt-4">
+            <h4 style="color: black">Toplam Tutar: <strong class="text-success">@ViewBag.toplamTutar ₺</strong></h4>
+            <form asp-action="Odeme" asp-controller="Sepet" method="post">
+                <button type="submit" class="btn btn-success">💳 Ödeme Yap</button>
+            </form>
+        </div>
+    }
+</div>

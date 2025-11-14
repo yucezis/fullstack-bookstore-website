@@ -1,0 +1,29 @@
+﻿@model List<EticaretWebSitesi.Models.Siniflar.Urun>
+@{
+    ViewData["Title"] = "Kategori";
+    Layout = "~/Views/Shared/_shopLayout.cshtml";
+}
+
+<h2>@ViewBag.KategoriAdi</h2>
+
+<div class="container mt-4">
+    <div class="row">
+        @foreach (var kitap in Model)
+        {
+            <div class="col-6 col-md-3 mb-4">
+                <a href="@Url.Action("UrunDetay", "Urun", new { id = kitap.UrunId })" style="text-decoration:none; color:inherit;">
+                    <div class="card h-100 shadow-sm">
+                        <img src="@kitap.UrunGorsel" alt="@kitap.UrunAdi" style="width:100%; height:250px; object-fit:contain; background-color:#f8f9fa;" />
+                        <div class="card-body">
+                            <h5 class="card-title">@kitap.UrunAdi</h5>
+                            <p class="mb-1 text-muted small">@kitap.UrunYazar</p>
+                            <p class="mb-1 text-muted small">@kitap.UrunMarka</p>
+                            <p class="fw-bold">@kitap.UrunSatisFiyati ₺</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>
+

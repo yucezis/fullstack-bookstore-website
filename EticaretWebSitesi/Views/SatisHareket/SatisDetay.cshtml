@@ -1,0 +1,53 @@
+﻿@using EticaretWebSitesi.Models.Siniflar
+@model List<SatisHareket>
+@{
+    ViewData["Title"] = "SatisDetay";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h1 style=" color:darkgoldenrod">SATIŞ DETAYI</h1>
+<br />
+
+<table class="table table-striped">
+    <tr>
+        
+		<th> MÜŞTERİ İSİM SOYİSİM</th>
+		<th> KİTAP ADI </th>
+        <th> YAYINEVİ </th>
+        <th> SATIŞ FİYATI </th>
+        <th> SATIŞ ADETİ </th>
+        <th> TOPLAM TUTAR </th>
+        <th> TARİH </th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            
+			<td>
+				@x.Musteri.MusteriAdi @x.Musteri.MusteriSoyadi
+			</td>
+            <td>
+                @x.Urun.UrunAdi 
+            </td>
+            <td>
+                @x.Urun.UrunMarka
+            </td>
+            <td>
+                @x.Fiyat
+            </td>
+            <td>
+                @x.Adet
+            </td>
+            <td>
+                @x.ToplamTutar
+            </td>
+            <td>
+                @x.Tarih
+            </td>
+           
+     
+        </tr>
+    }
+</table>
+<br />

@@ -1,0 +1,237 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@using EticaretWebSitesi.Models.Siniflar
+@model List<Urun>
+
+@{
+    ViewData["Title"] = "Kitaplar";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1 class="text-warning mb-4">KİTAPLAR</h1>
+
+<!-- Yeni Ürün Ekle Butonu -->
+<button type="button" class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#urunEkleModal">
+    <i class="bi bi-plus-lg"></i> Yeni Ürün Ekle
+</button>
+
+<!-- Yeni Ürün Ekle Modalı -->
+<div class="modal fade" id="urunEkleModal" tabindex="-1" aria-labelledby="urunEkleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form asp-action="UrunEkle" method="post">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="urunEkleModalLabel">Yeni Ürün Ekle</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Kitap Adı</label>
+                            <input type="text" class="form-control" name="UrunAdi" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Yazar</label>
+                            <input type="text" class="form-control" name="UrunYazar" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Yayınevi</label>
+                            <input type="text" class="form-control" name="UrunMarka" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Stok</label>
+                            <input type="number" class="form-control" name="UrunStok" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Stok Durumu</label>
+                            <select class="form-select" name="UrunStokDurum">
+                                <option value="true">Var</option>
+                                <option value="false">Yok</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Satış Fiyatı</label>
+                            <input type="number" step="0.01" class="form-control" name="UrunSatisFiyati" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">İndirimli Fiyat</label>
+                            <input type="number" step="0.01" class="form-control" name="IndirimliFiyat" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Kategori</label>
+                            <select class="form-select" name="KategoriID" required>
+                                <option value="">--Kategori Seçiniz--</option>
+                                @foreach (SelectListItem item in ViewBag.Kategoriler)
+                                {
+                                    <option value="@item.Value">@item.Text</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Görsel URL</label>
+                            <input type="text" class="form-control" name="UrunGorsel" />
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Açıklama</label>
+                            <textarea class="form-control" name="Aciklama"></textarea>
+                        </div>
+                        <input type="hidden" name="Durum" value="true" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                    <button type="submit" class="btn btn-primary">Ekle</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Ürün Listesi -->
+<div class="table-responsive">
+    <table class="table table-striped table-bordered align-middle text-center">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Adı</th>
+                <th>Yazar</th>
+                <th>Yayınevi</th>
+                <th>Stok</th>
+                <th>Durum</th>
+                <th>Satış ₺</th>
+                <th>İndirim ₺</th>
+                <th>Kategori</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var u in Model)
+            {
+                <tr>
+                    <td>@u.UrunId</td>
+                    <td>@u.UrunAdi</td>
+                    <td>@u.UrunYazar</td>
+                    <td>@u.UrunMarka</td>
+                    <td>@u.UrunStok</td>
+                    <td>
+                        @if (u.UrunStokDurum)
+                        {
+                            <span class="badge bg-success">Var</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">Yok</span>
+                        }
+                    </td>
+                    <td>@u.UrunSatisFiyati.ToString("C")</td>
+                    <td>@(u.IndirimliFiyat.HasValue ? u.IndirimliFiyat.Value.ToString("C") : "-")</td>
+                    <td>@u.Kategori?.KategoriAdi</td>
+                    <td>
+                        <a href="/Urun/UrunSil/@u.UrunId" class="btn btn-danger btn-sm"
+                           onclick="return confirm('Silmek istediğinize emin misiniz?');">
+                            Sil
+                        </a>
+                    </td>
+                    <td>
+                        <!-- Güncelle Butonu -->
+                        <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#guncelleModal-@u.UrunId">
+                            Güncelle
+                        </button>
+
+                        <!-- Güncelle Modalı -->
+                        <div class="modal fade" id="guncelleModal-@u.UrunId" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <form asp-action="UrunGuncelle" method="post">
+                                        <input type="hidden" name="UrunId" value="@u.UrunId" />
+                                        <div class="modal-header bg-success text-white">
+                                            <h5 class="modal-title">Ürün Güncelle</h5>
+                                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row g-3">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Kitap Adı</label>
+                                                    <input type="text" class="form-control" name="UrunAdi" value="@u.UrunAdi" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Yazar</label>
+                                                    <input type="text" class="form-control" name="UrunYazar" value="@u.UrunYazar" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Yayınevi</label>
+                                                    <input type="text" class="form-control" name="UrunMarka" value="@u.UrunMarka" />
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label class="form-label">Stok</label>
+                                                    <input type="number" class="form-control" name="UrunStok" value="@u.UrunStok" />
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label class="form-label">Stok Durumu</label>
+                                                    <select class="form-select" name="UrunStokDurum">
+                                                        @if (u.UrunStokDurum)
+                                                        {
+                                                            <option value="true" selected>Var</option>
+                                                            <option value="false">Yok</option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option value="true">Var</option>
+                                                            <option value="false" selected>Yok</option>
+                                                        }
+                                                    </select>
+
+
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Satış Fiyatı</label>
+                                                    <input type="number" step="0.01" class="form-control" name="UrunSatisFiyati" value="@u.UrunSatisFiyati" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">İndirimli Fiyat</label>
+                                                    <input type="number" step="0.01" class="form-control" name="IndirimliFiyat" value="@u.IndirimliFiyat" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Kategori</label>
+                                                    <select class="form-select" name="KategoriID">
+                                                        @foreach (SelectListItem item in ViewBag.Kategoriler)
+                                                        {
+                                                            if (item.Value == u.KategoriID.ToString())
+                                                            {
+                                                                <option value="@item.Value" selected>@item.Text</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="@item.Value">@item.Text</option>
+                                                            }
+                                                        }
+
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Görsel</label>
+                                                    <input type="text" class="form-control" name="UrunGorsel" value="@u.UrunGorsel" />
+                                                </div>
+                                                <div class="col-12">
+                                                    <label class="form-label">Açıklama</label>
+                                                    <textarea class="form-control" name="Aciklama">@u.Aciklama</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                                            <button type="submit" class="btn btn-success">Kaydet</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

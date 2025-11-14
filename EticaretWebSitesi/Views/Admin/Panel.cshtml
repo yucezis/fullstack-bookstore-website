@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Panel";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">İstatistikler</h2>
+    <div class="row text-white">
+        <div class="col-md-3 mb-3">
+            <div class="bg-primary p-3 rounded shadow-sm">
+                <h5>Toplam Ürün</h5>
+                <p class="fs-4">@ViewBag.UrunSayisi</p>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="bg-success p-3 rounded shadow-sm">
+                <h5>Toplam Satış</h5>
+                <p class="fs-4">@ViewBag.ToplamSatis ₺</p>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="bg-warning p-3 rounded shadow-sm">
+                <h5>Toplam Kullanıcı</h5>
+                <p class="fs-4">@ViewBag.KullaniciSayisi</p>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="bg-danger p-3 rounded shadow-sm">
+                <h5>Düşük Stok</h5>
+                <p class="fs-4">@ViewBag.DusukStokAdedi</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-8">
+            <canvas id="satisChart"></canvas>
+        </div>
+        <div class="col-md-4">
+            <canvas id="cokSatanlarChart"></canvas>
+        </div>
+    </div>
+</div>
+

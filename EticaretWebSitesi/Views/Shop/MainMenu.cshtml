@@ -1,0 +1,238 @@
+﻿@model List<EticaretWebSitesi.Models.Siniflar.Urun>
+
+@{
+    ViewData["Title"] = "MainMenu";
+    Layout = "~/Views/Shared/_shopLayout.cshtml";
+    var indirimliKitaplar = Model ?? new List<EticaretWebSitesi.Models.Siniflar.Urun>();
+}
+
+<style>
+    body {
+        position: relative;
+        background-image: url('/img/libraryfoto.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+    }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+    .intro-text {
+        max-width: 900px;
+        margin: 120px 120px 40px 120px;
+    }
+
+        .intro-text h3 {
+            font-weight: 700;
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+            color: #f0a500;
+            text-shadow: 0 0 5px rgba(255, 165, 0, 0.8);
+        }
+
+        .intro-text p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            color: #ddd;
+            margin-bottom: 6px;
+        }
+
+    /* Carousel kartları */
+    .carousel .card {
+        border-radius: 15px;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: rgba(40, 40, 40, 0.9);
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+        .carousel .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 14px 28px rgba(240, 165, 0, 0.9);
+            z-index: 10;
+        }
+
+    .carousel .card-img-top {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        height: 200px;
+        object-fit: contain;
+        background-color: #222;
+    }
+
+    .card-body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        padding: 15px 10px;
+    }
+
+    .card-title {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #f0a500;
+        margin-bottom: 5px;
+    }
+
+    .text-muted {
+        color: #bbb !important;
+        font-size: 0.85rem;
+        margin-bottom: 4px;
+    }
+
+    .price {
+        margin-top: 10px;
+    }
+
+        .price .text-decoration-line-through {
+            text-decoration-thickness: 2px;
+            color: #777 !important;
+            font-size: 0.9rem;
+        }
+
+        .price .fw-bold {
+            color: #e53935 !important;
+            font-size: 1.15rem;
+            font-weight: 800 !important;
+            margin-left: 8px;
+        }
+
+    /* Carousel kontrol butonları */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        filter: invert(1);
+        width: 40px;
+        height: 40px;
+    }
+
+    /* İndirimli kitaplar sayfasına git butonu */
+    .btn-indirimli {
+        display: inline-block;
+        margin: 30px 0 60px 1200px;
+        background-color: dimgrey;
+        color: white;
+        font-weight: 700;
+        padding: 12px 28px;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        text-decoration: none;
+        user-select: none;
+    }
+
+        .btn-indirimli:hover {
+            background-color: #a9a9a9;
+            box-shadow: 0 8px 20px rgba(255, 165, 0, 0.9);
+            color: #f0a500;
+            text-decoration: none;
+        }
+
+    /* Responsive */
+    .media (max-width: 991px) {
+        .intro-text
+
+    {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .btn-indirimli {
+        margin-left: 20px;
+    }
+
+    .carousel .col-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 0 8px;
+        margin-bottom: 20px;
+    }
+
+    }
+
+    .media (max-width: 575px) {
+        .carousel .col-3
+
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    }
+</style>
+
+<div class="intro-text">
+    <h3>Kaçırılmayacak Fırsatlar!</h3>
+    <p>En sevdiğiniz kitaplarda büyük indirimler sizi bekliyor. Hemen alışverişe başlayın, favori kitaplarınızı uygun fiyata kapın!</p>
+    <p>Üstelik saat 12.00'ye kadar verilen siparişler aynı gün kargoda</p>
+</div>
+
+@if (!indirimliKitaplar.Any())
+{
+    <p class="text-center" style="color:#ccc; font-size:1.2rem; margin-top:60px;">Şu anda indirimli kitap yok.</p>
+}
+else
+{
+    <div id="indirimliKitaplarCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @for (int i = 0; i < indirimliKitaplar.Count; i += 4)
+            {
+                var kitapGrubu = indirimliKitaplar.Skip(i).Take(4).ToList();
+                <div class="carousel-item @(i == 0 ? "active" : "")">
+                    <div class="container">
+                        <div class="row g-3 justify-content-center">
+                            @foreach (var kitap in kitapGrubu)
+                            {
+                                <div class="col-3">
+                                    <a href="/UrunDetay/Index/@kitap.UrunId" style="text-decoration: none; color: inherit;">
+                                        <div class="card h-100 shadow-sm">
+                                            <img src="@(kitap.UrunGorsel)" alt="@kitap.UrunAdi" class="card-img-top" />
+                                            <div class="card-body text-center">
+                                                <h6 class="card-title">@kitap.UrunAdi</h6>
+                                                <p class="text-muted small">@kitap.UrunYazar</p>
+                                                <p class="text-muted small">@kitap.UrunMarka</p>
+                                                <p class="price">
+                                                    <span class="text-muted text-decoration-line-through">@kitap.UrunSatisFiyati ₺</span>
+                                                    <span class="fw-bold">@kitap.IndirimliFiyat ₺</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#indirimliKitaplarCarousel" data-bs-slide="prev" aria-label="Önceki">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#indirimliKitaplarCarousel" data-bs-slide="next" aria-label="Sonraki">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <a href="/Urun/IndirimliUrunler" class="btn-indirimli">İndirimli Kitaplara Git</a>
+}

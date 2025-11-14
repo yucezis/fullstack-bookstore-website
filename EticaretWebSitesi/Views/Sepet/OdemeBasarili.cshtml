@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Ödeme Başarılı";
+    Layout = "~/Views/Shared/_shopLayout.cshtml";
+}
+
+<style>
+    .odeme-arka-plan {
+        position: relative;
+        background: url('/img/libraryfoto.jpg') no-repeat center center fixed;
+        background-size: cover;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .siyah-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+    }
+
+    .odeme-kart {
+        position: relative;
+        z-index: 2;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 20px;
+        padding: 50px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        text-align: center;
+        max-width: 600px;
+        width: 90%;
+    }
+
+        .odeme-kart i {
+            font-size: 4rem;
+            color: #28a745;
+        }
+
+        .odeme-kart h2 {
+            font-weight: bold;
+            margin-top: 20px;
+            color: #28a745;
+        }
+
+        .odeme-kart p {
+            font-size: 1.2rem;
+            margin: 15px 0;
+        }
+
+    .btn-devam {
+        background-color: #28a745;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: 0.3s ease;
+        text-decoration: none;
+    }
+
+        .btn-devam:hover {
+            background-color: #218838;
+            color: white;
+        }
+</style>
+
+<div class="odeme-arka-plan">
+    <div class="siyah-overlay"></div>
+
+    <div class="odeme-kart" style="color:black">
+        <i class="bi bi-check-circle-fill"></i>
+        <h2>Ödeme Başarılı!</h2>
+        <p>Satın alma işleminiz başarıyla tamamlandı. İyi günler dileriz 📚😊</p>
+        <a href="/Shop/MainMenu" class="btn-devam">Alışverişe Devam Et</a>
+    </div>
+</div>

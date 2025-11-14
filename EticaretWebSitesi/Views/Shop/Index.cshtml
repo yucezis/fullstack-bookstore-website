@@ -1,0 +1,245 @@
+﻿@using EticaretWebSitesi.Models.Siniflar
+@model List<Urun>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_shopLayout.cshtml";
+}
+
+
+<style>
+    body {
+        position: relative;
+        background-image: url('/img/libraryfoto.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+    }
+
+    h1 {
+        margin-top: 100px;
+        color: #FFD700;
+        text-align: center;
+        font-weight: 700;
+        text-shadow: 1px 1px 3px black;
+    }
+
+    .card {
+        border-radius: 15px;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+    }
+
+    .card-img-top {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        background-color: #f8f9fa;
+        height: 250px;
+        object-fit: contain;
+        padding: 10px;
+    }
+
+    .card-title {
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 0.25rem;
+    }
+
+    .text-muted.small {
+        font-size: 0.85rem;
+        color: #666;
+        margin-bottom: 0.2rem;
+    }
+
+    .price-old {
+        text-decoration: line-through;
+        color: gray;
+        font-size: 0.9rem;
+    }
+
+    .price-discount {
+        color: #d9534f;
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
+
+    .price-normal {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #333;
+    }
+
+    .btn-sepete-ekle {
+        width: 100%;
+        background-color: #d9534f;
+        border: none;
+        color: white;
+        font-weight: 600;
+        padding: 8px 0;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(217, 83, 79, 0.4);
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-sepete-ekle:hover {
+        background-color: #c9302c;
+        color: white;
+        box-shadow: 0 6px 12px rgba(201, 48, 44, 0.6);
+    }
+
+    .btn-favori {
+        width: 100%;
+        font-weight: 600;
+        padding: 8px 0;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-size: 0.95rem;
+    }
+
+    .btn-favori.btn-danger {
+        background-color: #d9534f;
+        color: white;
+        border: none;
+        box-shadow: 0 4px 8px rgba(217, 83, 79, 0.4);
+    }
+
+    .btn-favori.btn-danger:hover {
+        background-color: #c9302c;
+        box-shadow: 0 6px 12px rgba(201, 48, 44, 0.6);
+        color: white;
+    }
+
+    .btn-favori.btn-outline-secondary {
+        background-color: transparent;
+        border: 2px solid #6c757d;
+        color: #6c757d;
+    }
+
+    .btn-favori.btn-outline-secondary:hover {
+        background-color: #6c757d;
+        color: white;
+        border-color: #6c757d;
+    }
+
+    .btn-favori i {
+        font-size: 1.2rem;
+    }
+
+    .ust-bosluk {
+        height: 100px;
+    }
+</style>
+
+@if (TempData["GirisUyarisi"] != null)
+{
+    <div class="modal fade show" id="girisModal" tabindex="-1" aria-labelledby="girisModalLabel" style="display:block; background-color: rgba(0, 0, 0, 0.5);">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="girisModalLabel">Uyarı</h5>
+                    <button type="button" class="btn-close" onclick="kapatModal()" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    @TempData["GirisUyarisi"]
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function kapatModal() {
+            var modal = document.getElementById("girisModal");
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            var modal = document.getElementById("girisModal");
+            if (event.target === modal) {
+                kapatModal();
+            }
+        }
+    </script>
+}
+
+<div class="ust-bosluk"></div>
+<div class="container mt-4">
+    <div class="row">
+        @foreach (var kitap in Model)
+        {
+            <div class="col-6 col-md-3 mb-4">
+                <div class="card h-100 shadow-sm">
+
+                    <a asp-controller="UrunDetay" asp-action="Index" asp-route-id="@kitap.UrunId" style="text-decoration: none; color: inherit;">
+                        <img src="@(string.IsNullOrWhiteSpace(kitap.UrunGorsel) ? "/img/default.jpg" : kitap.UrunGorsel.Trim())" alt="@kitap.UrunAdi" class="card-img-top" />
+                    </a>
+
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <a asp-controller="UrunDetay" asp-action="Index" asp-route-id="@kitap.UrunId" style="text-decoration: none; color: inherit;">
+                                <h5 class="card-title">@kitap.UrunAdi</h5>
+                            </a>
+                            <p class="mb-1 text-muted small">@kitap.UrunYazar</p>
+                            <p class="mb-1 text-muted small">@kitap.UrunMarka</p>
+                            @if (kitap.IndirimliFiyat != null && kitap.IndirimliFiyat < kitap.UrunSatisFiyati)
+                            {
+                                <p>
+                                    <span class="price-old">@kitap.UrunSatisFiyati ₺</span><br />
+                                    <span class="price-discount">@kitap.IndirimliFiyat ₺</span>
+                                </p>
+                            }
+                            else
+                            {
+                                <p class="price-normal">@kitap.UrunSatisFiyati ₺</p>
+                            }
+                        </div>
+
+                        <div>
+                            <form method="post" asp-controller="Urun" asp-action="SepeteEkle">
+                                <input type="hidden" name="id" value="@kitap.UrunId" />
+                                <button type="submit" class="btn-sepete-ekle">
+                                    <i class="fas fa-shopping-cart"></i> Sepete Ekle
+                                </button>
+                            </form>
+                            <br />
+
+                            @{
+                                var favoriler = Context.Session.GetObjectFromJson<List<int>>("favoriler") ?? new List<int>();
+                                bool favorideMi = favoriler.Contains(kitap.UrunId);
+                            }
+
+                            <form method="post" asp-controller="Shop" asp-action="FavoriEkleCikar">
+                                <input type="hidden" name="id" value="@kitap.UrunId" />
+                                <button type="submit" class="btn-favori @(favorideMi ? "btn-danger" : "btn-outline-secondary")" title="@(favorideMi ? "Favorilerden çıkar" : "Favorilere ekle")">
+                                    <i class="fas fa-heart @(favorideMi ? "" : "text-secondary")"></i>
+                                    @(favorideMi ? "Favoride" : "Favori Ekle")
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

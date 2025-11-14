@@ -1,0 +1,88 @@
+﻿@using EticaretWebSitesi.Models.Siniflar
+@model List<Kategori>
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Kategoriler";
+}
+
+<div class="text-center">
+    <h1 style="color: darkgoldenrod;">KATEGORİLER</h1>
+</div>
+
+<table class="table table-striped" style="margin-top:20px; margin-left:20px">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Kategori</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var k in Model)
+        {
+            <tr>
+                <td>@k.KategoriID</td>
+                <td>@k.KategoriAdi</td>
+                <td>
+                    <a href="/Kategori/KategoriSil/@k.KategoriID" class="btn btn-danger">Sil</a>
+                </td>
+                <td>
+                    <!-- GÜNCELLE MODAL BUTONU -->
+                    <button class="btn btn-success" data-toggle="modal" data-target="#guncelleModal@k.KategoriID">Güncelle</button>
+
+                    <!-- GÜNCELLE MODAL -->
+                    <div class="modal fade" id="guncelleModal@k.KategoriID" tabindex="-1" role="dialog" aria-labelledby="guncelleLabel@k.KategoriID" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <form method="post" asp-controller="Kategori" asp-action="KategoriGuncelle">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="KategoriID" value="@k.KategoriID" />
+                                    <div class="form-group">
+                                        <label>Kategori Adı</label>
+                                        <input type="text" name="KategoriAdi" class="form-control" value="@k.KategoriAdi" required />
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Güncelle</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">İptal</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- KATEGORİ EKLE BUTONU -->
+<div class="text-left" style="margin-left: 20px;">
+    <button class="btn btn-primary" data-toggle="modal" data-target="#kategoriEkleModal">+ Kategori Ekle</button>
+</div>
+
+<!-- EKLEME MODALI -->
+<div class="modal fade" id="kategoriEkleModal" tabindex="-1" role="dialog" aria-labelledby="kategoriEkleLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="post" action="/Kategori/KategoriEkle">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="kategoriEkleLabel">Yeni Kategori Ekle</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Kategori Adı</label>
+                        <input type="text" class="form-control" name="KategoriAdi" required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Ekle</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">İptal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

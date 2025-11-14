@@ -1,0 +1,176 @@
+﻿@using EticaretWebSitesi.Models.Siniflar
+@model List<Admin>
+
+@{
+    ViewData["Title"] = "Admin Bilgileri";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<style>
+    h1 {
+        color: darkgoldenrod;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    .admin-table {
+        width: 90%;
+        margin: 30px auto;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+    }
+
+        .admin-table th {
+            background-color: #343a40;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .admin-table td {
+            text-align: center;
+            padding: 12px;
+            vertical-align: middle;
+        }
+
+        .admin-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+    .btn-custom {
+        padding: 6px 12px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 6px;
+    }
+
+    .tick {
+        color: green;
+        font-size: 18px;
+    }
+
+    .cross {
+        color: red;
+        font-size: 18px;
+    }
+</style>
+
+<div class="text-center">
+    <h1>Admin Bilgileri</h1>
+</div>
+
+<table class="table admin-table">
+    <thead>
+        <tr>
+            <th>Kullanıcı Adı</th>
+            <th>Yetki</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@m.KullaniciAdi</td>
+                <td>
+                    @if (m.Yetki)
+                    {
+                        <span class="tick">&#10004;</span>
+                    }
+                    else
+                    {
+                        <span class="cross">&#10006;</span>
+                    }
+                </td>
+                <td>
+                    <button type="button" class="btn btn-warning btn-custom" data-toggle="modal" data-target="#adminGuncelleModal_@m.AdminId">
+                        Güncelle
+                    </button>
+                </td>
+                <td>
+                    <a href="/Admin/AdminSil/@m.AdminId" class="btn btn-danger btn-custom"
+                       onclick="return confirm('Bu admini silmek istediğinize emin misiniz?');">
+                        Sil
+                    </a>
+                </td>
+            </tr>
+
+            <!-- GÜNCELLEME MODALI -->
+            <div class="modal fade" id="adminGuncelleModal_@m.AdminId" tabindex="-1" aria-labelledby="adminGuncelleModalLabel_@m.AdminId" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form method="post" action="/Admin/AdminGuncelle">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="adminGuncelleModalLabel_@m.AdminId">Admin Güncelle</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="hidden" name="AdminId" value="@m.AdminId" />
+                                <div class="form-group">
+                                    <label>Kullanıcı Adı</label>
+                                    <input type="text" class="form-control" name="KullaniciAdi" value="@m.KullaniciAdi" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>Şifre</label>
+                                    <input type="text" class="form-control" name="Sifre" value="@m.Sifre" required />
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="Yetki" id="Yetki_@m.AdminId" value="true" @(m.Yetki ? "checked" : "") />
+                                    <label class="form-check-label" for="Yetki_@m.AdminId">Yetki Ver</label>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Güncelle</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">İptal</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </tbody>
+</table>
+
+<!-- ADMIN EKLE BUTONU -->
+<button type="button" class="btn btn-success btn-custom" data-toggle="modal" data-target="#adminEkleModal">
+    + Admin Ekle
+</button>
+
+<!-- ADMIN EKLEME MODALI -->
+<div class="modal fade" id="adminEkleModal" tabindex="-1" aria-labelledby="adminEkleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" action="/Admin/AdminEkleme">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adminEkleModalLabel">Yeni Admin Ekle</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label>Kullanıcı Adı</label>
+                        <input type="text" class="form-control" name="KullaniciAdi" required />
+                    </div>
+                    <div class="mb-3">
+                        <label>Şifre</label>
+                        <input type="text" class="form-control" name="Sifre" required />
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="Yetki" value="true" id="Yetki" />
+                        <label class="form-check-label" for="Yetki">Yetki Ver</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">İptal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

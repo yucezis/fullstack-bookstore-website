@@ -1,0 +1,45 @@
+﻿@using EticaretWebSitesi.Models.Siniflar
+@model List<SatisHareket>
+@{
+    ViewData["Title"] = "MusteriAlisveris";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h1 style="color:darkgoldenrod">Müşterinin Alışveriş Geçmişi</h1>
+<br />
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> Müşterinin Adı Soyadı: @ViewBag.musteri</li>
+
+</ol>
+
+
+<table class="table table-condensed">
+    <tr>
+        <th>Satış Id</th>
+        <th>Ürün</th>
+        <th>Fiyat</th>
+        <th>Adet</th>
+        <th>Toplam Fiyat</th>
+        <th>Tarih</th>
+        <th>Yazdır</th>
+
+    </tr>
+
+</table>
+
+@foreach(var x in Model)
+{
+    <tr>
+        <td>x.SatisHareketId</td>
+        <td>x.Urun.UrunAd</td>
+        <td>x.Fiyat</td>
+        <td>x.Adet</td>
+        <td>x.ToplamTutar</td>
+        <td>x.Tarih</td>
+        <td>
+            <a href="#" class="btn btn-default" style="background-color:hotpink">YAZDIR</a>
+        </td>
+
+    </tr>
+}

@@ -1,0 +1,326 @@
+﻿@model EticaretWebSitesi.Models.Siniflar.Musteri
+@{
+    ViewData["Title"] = "Hesabim";
+    Layout = "~/Views/Shared/_shopLayout.cshtml";
+}
+
+<style>
+    body {
+        position: relative;
+        background-image: url('/img/libraryfoto.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); 
+            z-index: -1;
+        }
+
+    .container {
+        max-width: 900px;
+        margin: 100px auto 50px;
+        background: rgba(30, 30, 30, 0.85); 
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+        padding: 30px 40px;
+    }
+
+    h2 {
+        margin-bottom: 25px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-align: center;
+        color: #fff;
+    }
+
+    button.btn-toggle {
+        background-color: #3a3a3a;
+        border: none;
+        color: #ddd;
+        padding: 12px 22px;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        display: block;
+        margin: 15px auto 10px;
+        width: 220px;
+    }
+
+        button.btn-toggle:hover {
+            background-color: #1e90ff;
+            color: #fff;
+        }
+
+    #personalInfo, #purchaseHistory {
+        display: none;
+        margin-top: 20px;
+        color: #ccc;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+        #personalInfo ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+            #personalInfo ul li {
+                margin-bottom: 12px;
+                border-bottom: 1px solid #444;
+                padding-bottom: 8px;
+            }
+
+                #personalInfo ul li strong {
+                    color: #fff;
+                }
+
+        #personalInfo button.update-btn {
+            background-color: #1e90ff;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+            #personalInfo button.update-btn:hover {
+                background-color: #0077cc;
+            }
+
+    table.table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        color: #eee;
+        font-size: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+        table.table thead {
+            background-color: #1e90ff;
+            color: white;
+            font-weight: 700;
+        }
+
+        table.table th, table.table td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 1px solid #444;
+        }
+
+        table.table tbody tr:hover {
+            background-color: rgba(30, 144, 255, 0.2);
+        }
+
+    p.no-purchase {
+        text-align: center;
+        font-size: 18px;
+        color: #bbb;
+        margin-top: 20px;
+        font-style: italic;
+    }
+
+    a.btn-logout {
+        display: block;
+        max-width: 220px;
+        margin: 40px auto 0;
+        padding: 12px 0;
+        background-color: #e74c3c;
+        color: white;
+        font-weight: 600;
+        text-align: center;
+        border-radius: 8px;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(231, 76, 60, 0.6);
+        transition: background-color 0.3s ease;
+    }
+
+        a.btn-logout:hover {
+            background-color: #c0392b;
+        }
+
+    <style >
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.7);
+        backdrop-filter: blur(5px);
+    }
+
+    .modal-content {
+        background-color: #2c3e50;
+        margin: auto;
+        padding: 30px;
+        border: 1px solid #888;
+        width: 90%;
+        max-width: 500px;
+        color: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    }
+
+        .modal-content input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            background-color: #ecf0f1;
+            border: none;
+            border-radius: 6px;
+        }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+        .close:hover {
+            color: #fff;
+        }
+</style>
+
+</style>
+
+<div class="container">
+    <h2>Merhaba @Model.MusteriAdi @Model.MusteriSoyadi</h2>
+
+    <button class="btn-toggle" type="button" onclick="toggleSection('personalInfo')">
+        👤 Kişisel Bilgileriniz
+    </button>
+    <div id="personalInfo">
+        <ul>
+            <li><strong>İsim Soyisim:</strong> @Model.MusteriAdi @Model.MusteriSoyadi</li>
+            <li><strong>Adres:</strong> @Model.MusteriSehir</li>
+            <li><strong>Telefon Numarası:</strong> @Model.MusteriTelNo</li>
+            <li><strong>E-Mail:</strong> @Model.MusteriMail</li>
+        </ul>
+        
+        <button class="update-btn" onclick="openModal()">Bilgileri Güncelle</button>
+
+        <div id="updateModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h4>Bilgilerinizi Güncelleyin</h4>
+                <form asp-action="BilgiGuncelle" asp-controller="Musteri" method="post">
+                    <input type="hidden" name="MusteriID" value="@Model.MusteriId" />
+
+                    <label>Ad:</label>
+                    <input type="text" name="MusteriAdi" value="@Model.MusteriAdi" required />
+
+                    <label>Soyad:</label>
+                    <input type="text" name="MusteriSoyadi" value="@Model.MusteriSoyadi" required />
+
+                    <label>Şehir:</label>
+                    <input type="text" name="MusteriSehir" value="@Model.MusteriSehir" required />
+
+                    <label>Telefon:</label>
+                    <input type="text" name="MusteriTelNo" value="@Model.MusteriTelNo" required />
+
+                    <label>Email:</label>
+                    <input type="email" name="MusteriMail" value="@Model.MusteriMail" required />
+
+                    <label>Şifre:</label>
+                    <input type="password" name="MusteriSifre" value="@Model.MusteriSifre" required />
+
+                    <button type="submit" class="update-btn">Kaydet</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="btn-toggle" type="button" onclick="toggleSection('purchaseHistory')">
+        🛒 Alışveriş Geçmişiniz
+    </button>
+    <div id="purchaseHistory">
+        @if (Model.SatisHarekets != null && Model.SatisHarekets.Any())
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Ürün</th>
+                        <th>Adet</th>
+                        <th>Fiyat</th>
+                        <th>Tarih</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.SatisHarekets)
+                    {
+                        <tr>
+                            <td>@item.Urun.UrunAdi | @item.Urun.UrunMarka</td>
+                            <td>@item.Adet</td>
+                            <td>@(item.Fiyat * item.Adet) ₺</td>
+                            <td>@item.Tarih.ToShortDateString()</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p class="no-purchase">Henüz alışveriş yapmadınız.</p>
+        }
+    </div>
+
+    <a class="btn-logout" asp-action="Logout" asp-controller="Musteri">Çıkış Yap</a>
+    <a class="btn-logout" asp-action="HesapSil" asp-controller="Musteri" asp-route-id="@Model.MusteriId">Hesap Sil</a>
+
+</div>
+
+<script>
+    function toggleSection(id) {
+        var el = document.getElementById(id);
+        if (el.style.display === "none" || el.style.display === "") {
+            el.style.display = "block";
+        } else {
+            el.style.display = "none";
+        }
+    }
+</script>
+
+<script>
+    function openModal() {
+        document.getElementById("updateModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("updateModal").style.display = "none";
+    }
+
+    // ESC tuşu ile modal kapatma
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+            closeModal();
+        }
+    });
+</script>

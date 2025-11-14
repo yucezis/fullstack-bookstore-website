@@ -1,0 +1,56 @@
+﻿@model EticaretWebSitesi.Models.Siniflar.Musteri
+@{
+    ViewData["Title"] = "MusteriGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<div class="text-center"> <h1 style="color:darkgoldenrod">MÜŞTERİ BİLGİLERİ GÜNCELLEME</h1>
+
+</div>
+<br />
+
+@using (Html.BeginForm("MusteriGuncelle","Musteri", FormMethod.Post))
+{
+    <div class="form-group">
+
+    @Html.HiddenFor(x => x.MusteriId)
+
+    @Html.LabelFor(x => x.MusteriAdi, "İsim")
+    @Html.TextBoxFor(x => x.MusteriAdi, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MusteriAdi,"", new { @style = "color:red"})
+    <br />
+    @Html.LabelFor(x => x.MusteriSoyadi, "Soyisim")
+    @Html.TextBoxFor(x => x.MusteriSoyadi, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.MusteriSoyadi, "", new { @style = "color:red" })
+    <br />
+    @Html.LabelFor(x => x.MusteriSehir, "Adres")
+    @Html.TextBoxFor(x => x.MusteriSehir, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.MusteriSehir, "", new { @style = "color:red" })
+    <br />
+    @Html.LabelFor(x => x.MusteriMail, "Mail Adresi")
+    @Html.TextBoxFor(x => x.MusteriMail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.MusteriMail, "", new { @style = "color:red" })
+    <br />
+        @Html.LabelFor(x => x.MusteriTelNo, "Telefon Numarası")
+        @Html.TextBoxFor(x => x.MusteriTelNo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.MusteriMail, "", new { @style = "color:red" })
+        <br />
+        @Html.LabelFor(x => x.MusteriSifre, "Şifre")
+        @Html.TextBoxFor(x => x.MusteriSifre, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.MusteriMail, "", new { @style = "color:red" })
+        <br />
+
+        <button class="btn btn-warning"> Güncellemeleri Kaydet</button>
+
+    </div>
+}
+
+
+
+
+
+
+
+
+

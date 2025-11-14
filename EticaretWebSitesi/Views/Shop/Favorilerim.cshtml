@@ -1,0 +1,142 @@
+﻿@model List<EticaretWebSitesi.Models.Siniflar.Urun>
+
+@{
+    ViewData["Title"] = "Favorilerim";
+    Layout = "~/Views/Shared/_shopLayout.cshtml";
+}
+
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: url('/img/libraryfoto.jpg') no-repeat center center fixed;
+        background-size: cover;
+        position: relative;
+        z-index: 0;
+    }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.6); 
+            z-index: -1;
+        }
+
+
+    .favori-container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 100px auto;
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+        color: #333;
+    }
+
+    .favori-title {
+        color: #e53935;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 32px;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+
+    .table th, .table td {
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .btn-danger {
+        background-color: #e53935;
+        border: none;
+        font-weight: bold;
+    }
+
+        .btn-danger:hover {
+            background-color: #c62828;
+        }
+
+    .price-original {
+        text-decoration: line-through;
+        color: #888;
+        font-size: 14px;
+    }
+
+    .price-discount {
+        color: #d32f2f;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .alert-warning {
+        font-weight: bold;
+        font-size: 18px;
+        background-color: rgba(255, 193, 7, 0.9);
+        color: #000;
+        border: none;
+    }
+</style>
+
+<div class="favori-container">
+    <h2 class="favori-title">❤️ Favorilerim</h2>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-warning text-center">Favorilerinize ürün eklemek için giriş yapınız</div>
+    }
+    else
+    {
+        <table class="table table-hover table-bordered shadow-sm">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Ürün</th>
+                    <th>Yayınevi</th>
+                    <th>Fiyat</th>
+                    <th>İşlem</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    var item = Model[i];
+                    <tr>
+                        <td>@(i + 1)</td>
+                        <td>
+                            <strong>@item.UrunAdi</strong><br />
+                            <small class="text-muted">@item.UrunYazar</small>
+                        </td>
+                        <td>@item.UrunMarka</td>
+                        <td>
+                            @if (item.IndirimliFiyat.HasValue)
+                            {
+                                <span class="price-original">@item.UrunSatisFiyati ₺</span>
+
+                                <br />
+                                <span class="price-discount">@item.IndirimliFiyat ₺</span>
+                            }
+                            else
+                            {
+                                <span class="fw-bold">@item.UrunSatisFiyati ₺</span>
+                            }
+                        </td>
+                        <td>
+                            <form asp-action="FavoriEkleCikar" asp-controller="Shop" method="post">
+                                <input type="hidden" name="id" value="@item.UrunId" />
+                                <button type="submit" class="btn btn-sm btn-danger">Kaldır</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

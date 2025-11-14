@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewData["Title"] = "AdminEkleme";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<!-- Admin Ekle Butonu -->
+<button type="button" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#adminEkleModal">
+    + Admin Ekle
+</button>
+
+<!-- Admin Ekle Modal -->
+<div class="modal fade" id="adminEkleModal" tabindex="-1" aria-labelledby="adminEkleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form method="post" action="/Admin/AdminEkleme">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adminEkleModalLabel">Yeni Admin Ekle</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="kullaniciAdi" class="form-label">Kullanıcı Adı</label>
+                        <input type="text" name="KullaniciAdi" class="form-control" id="kullaniciAdi" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="sifre" class="form-label">Şifre</label>
+                        <input type="text" name="Sifre" class="form-control" id="sifre" required />
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" name="Yetki" id="Yetki">
+                        <label class="form-check-label" for="Yetki">Yetki Ver</label>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

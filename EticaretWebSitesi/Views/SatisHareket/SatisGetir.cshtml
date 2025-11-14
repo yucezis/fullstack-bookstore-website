@@ -1,0 +1,35 @@
+﻿@model EticaretWebSitesi.Models.Siniflar.SatisHareket
+@{
+    ViewData["Title"] = "SatisGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h1 style="color: goldenrod;">Satış İşlemi Güncelleme</h1>
+<br />
+
+
+
+@using (Html.BeginForm("SatisGuncelle", "SatisHareket", FormMethod.Post))
+{
+   
+    @Html.LabelFor(x => x.Musteri, "Kitap Kategorisi")
+    @Html.DropDownListFor(x => x.MusteriId, (List<SelectListItem>)ViewBag.deger2, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Adet, "Adet")
+    @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Fiyat, "Fiyat")
+    @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+   <br />
+    @Html.LabelFor(x => x.ToplamTutar, "Toplam Tutar")
+    @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tarih, "Tarih")
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+  
+
+    <button class="btn btn-warning"> Güncellemeleri Kaydet</button>
+}
+

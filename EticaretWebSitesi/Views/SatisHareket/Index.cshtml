@@ -1,0 +1,77 @@
+﻿@using EticaretWebSitesi.Models.Siniflar
+@model List<SatisHareket>
+
+@{
+    ViewData["Title"] = "Satış Hareketleri";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<style>
+    h1 {
+        color: darkgoldenrod;
+        font-weight: bold;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .table-container {
+        width: 95%;
+        margin: 0 auto 40px auto;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        padding: 20px;
+    }
+
+    .custom-table thead {
+        background-color: #343a40;
+        color: white;
+        text-align: center;
+    }
+
+    .custom-table tbody td {
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .custom-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .custom-table th, .custom-table td {
+        padding: 14px;
+        font-size: 15px;
+    }
+</style>
+
+<h1>SATIŞ HAREKETLERİ</h1>
+
+<div class="table-container">
+    <table class="table custom-table">
+        <thead>
+            <tr>
+                <th>Ürün</th>
+                <th>Yayınevi</th>
+                <th>Müşteri</th>
+                <th>Adet</th>
+                <th>Fiyat</th>
+                <th>Toplam Tutar</th>
+                <th>Tarih</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var s in Model)
+            {
+                <tr>
+                    <td>@s.Urun.UrunAdi</td>
+                    <td>@s.Urun.UrunMarka</td>
+                    <td>@s.Musteri.MusteriAdi @s.Musteri.MusteriSoyadi</td>
+                    <td>@s.Adet</td>
+                    <td>@s.Fiyat ₺</td>
+                    <td>@s.ToplamTutar ₺</td>
+                    <td>@s.Tarih.ToString("dd.MM.yyyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
