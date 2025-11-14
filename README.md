@@ -11,11 +11,11 @@ Originally developed as an "Engineering Design" (Mühendislik Tasarımı) capsto
 ###  1. Customer Storefront
 The public-facing website where users browse, add items to cart, manage favorites, and make purchases.
 
-* **Home Page (Ana Sayfa):**
-    * Featured books (Öne çıkan ürünler)
-    * New arrivals (Yeni gelenler)
-    * Bestsellers (Çok satanlar)
-    * Discounted books section (İndirimli ürünler)
+* **Home Page:**
+    * Featured books
+    * New arrivals
+    * Bestsellers 
+    * Discounted books section 
 
 * **Categories (Kategoriler):**
     * Multi-level category filtering (Çok seviyeli kategori filtreleme)
