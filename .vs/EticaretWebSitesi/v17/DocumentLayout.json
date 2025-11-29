@@ -28,7 +28,7 @@
               "RelativeDocumentMoniker": "EticaretWebSitesi\\Views\\Urun\\Index.cshtml",
               "ToolTip": "C:\\C#_Projects\\EticaretWebSitesi\\EticaretWebSitesi\\Views\\Urun\\Index.cshtml",
               "RelativeToolTip": "EticaretWebSitesi\\Views\\Urun\\Index.cshtml",
-              "ViewState": "AgIAAHAAAAAAAAAAAAAQwHsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAQwHQAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-05T18:57:17.922Z",
               "EditorCaption": ""
@@ -51,6 +51,10 @@
           "DockedWidth": 38,
           "SelectedChildIndex": -1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
